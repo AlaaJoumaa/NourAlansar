@@ -1,0 +1,28 @@
+﻿.demo-section ul {
+    margin: 0;
+    padding: 0;
+}
+
+.demo-section ul li {
+    margin: 0;
+    padding: 10px 10px 10px 20px;
+    min-height: 28px;
+    line-height: 28px;
+    vertical-align: middle;
+    border-top: 1px solid rgba(128,128,128,.5);
+}
+
+.demo-section {
+    min-width: 220px;
+    margin-top: 50px;
+    padding: 0;
+}
+
+.demo-section ul li .k-switch {
+    float: right;
+}
+
+.settings-head {
+    height: 66px;
+    background: url('../content/web/switch/settings-title.png') no-repeat 20px 50% #2db245;
+}

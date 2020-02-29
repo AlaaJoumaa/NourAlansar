@@ -1,0 +1,65 @@
+﻿<div class="row">
+    <div class="col-md-9 col-sm-9 col-xs-9 col-lg-9">
+        <input class="k-textbox k-input-textbox" placeholder="Search" enter-click="searchProject()" ng-model="search" />
+    </div>
+    <div class="col-md-3 col-sm-3 col-xs-3 col-lg-3">
+        <button class="btn btn-theme-colored btn-flat search-button" ng-click="searchProject()">Search</button>
+    </div>
+</div>
+<div ng-show="projects.length == 0" class="lst-view-txt"><label>No data</label></div>
+<div class="card-container" ng-repeat="project in projects">
+    <section class="card ripple">
+        <div class="col-md-2 col-sm-12 col-xs-12 col-lg-2" style="padding: 0px !important;">
+            <div class="card-image-{{project.id}} loading" style="width:100%;">
+                <img id="img_{{ project.id }}" src="~/images/noimage.png" alt="{{ project.title }}" class="profile-img border-10" style="width:100%;height:100%;" />
+            </div>
+        </div>
+        <div class="col-md-10 col-sm-12 col-xs-12 col-lg-10">
+            <div class="card-detail">
+                <input id="{{project.id}}" type="hidden" />
+                <strong class="card-title loading"><label>Title: </label>&nbsp;<span class="card-value">{{ project.title }}</span></strong>
+                <div class="row"></div>
+                <h3 class="card-title loading"><label>Description: </label></h3>
+                <p class="card-value">{{ project.description }}</p>
+                <div class="row"></div>
+                <strong class="card-title loading"><label>Max amount: </label>&nbsp;<span class="card-value">{{ project.maxAmount }}</span></strong>
+
+                <div class="row"></div>
+                <strong class="card-title loading"><label>Amount balance: </label>&nbsp;<span class="card-value">{{ project.amountBalance }}</span></strong>
+                <div class="progress-item mt-0">
+                    <div class="progress mb-0">
+                        <div class="progress-bar appeared" data-percent="{{ (project.amountBalance * 100 / project.maxAmount).toFixed(2) }}" style="width: {{ (project.amountBalance * 100 / project.maxAmount).toFixed(2) }}%;"><span class="percent">{{ (project.amountBalance * 100 / project.maxAmount).toFixed(2) }} %</span></div>
+                    </div>
+                </div>
+                <div class="row"></div>
+                <strong class="card-title loading"><label>Created date: </label>&nbsp;<span class="card-value">{{ project.createdDate | date : "dd-MM-yyyy" }}</span></strong>
+                <div class="row"></div>
+                <strong class="card-title loading"><label>Modified date: </label>&nbsp;<span class="card-value">{{ project.modifiedDate | date : "dd-MM-yyyy" }}</span></strong>
+            </div>
+        </div>
+    </section>
+</div>
+
+@*<div ng-controller="projectsLstCtrl" ng-cloak layout-gt-sm="row" layout="column">
+
+        <div flex-gt-sm="50" flex>
+
+            <md-content>
+                <md-list flex>
+                    <md-list-item class="md-3-line" ng-repeat="item in todos" ng-click="itemClk()">
+                        <img ng-src="{{item.face}}?{{$index}}" class="md-avatar" alt="{{item.who}}" style="width:200px;height:200px;" />
+                        <div class="md-list-item-text" layout="column">
+                            <h3>{{ item.who }}</h3>
+                            <h4>{{ item.what }}</h4>
+                            <p>{{ item.notes }}</p>
+                        </div>
+                    </md-list-item>
+                    <md-divider></md-divider>
+                </md-list>
+            </md-content>
+
+        </div>
+
+        <md-divider></md-divider>
+
+    </div>*@

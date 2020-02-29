@@ -1,0 +1,185 @@
+﻿@*@using Microsoft.Extensions.Localization;
+@using NourAnsar.Website.Resources;
+@inject IStringLocalizer<SharedResources> _localizer*@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Meta Tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="description" content="CharityFund - Charity & Crowdfunding HTML Template" />
+    <meta name="keywords" content="building,business,construction,cleaning,transport,workshop" />
+    <meta name="author" content="ThemeMascot" />
+
+    <title>@ViewData["Title"]</title>
+    
+    <!-- Favicon and Touch Icons -->
+    <link href="~/images/favicon.png" rel="shortcut icon" type="image/png">
+    <link href="~/images/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="~/images/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72">
+    <link href="~/images/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114">
+    <link href="~/images/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144">
+
+    <!-- Stylesheet -->
+    <environment include="Development">
+        <!-- CSS | Theme Color -->
+        <link href="~/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="~/css/jquery-ui.min.css" rel="stylesheet" type="text/css">
+        <link href="~/css/animate.css" rel="stylesheet" type="text/css">
+        <link href="~/css/css-plugin-collections.css" rel="stylesheet" />
+        <link href="~/css/menuzord-skins/menuzord-boxed.css" rel="stylesheet" id="menuzord-menu-skins" />
+        <link href="~/css/style-main.css" rel="stylesheet" type="text/css">
+        <link href="~/css/preloader.css" rel="stylesheet" type="text/css">
+        <link href="~/css/custom-bootstrap-margin-padding.css" rel="stylesheet" type="text/css">
+        <link href="~/css/responsive.css" rel="stylesheet" type="text/css">
+        <link href="~/js/revolution-slider/css/settings.css" rel="stylesheet" type="text/css" />
+        <link href="~/js/revolution-slider/css/layers.css" rel="stylesheet" type="text/css" />
+        <link href="~/js/revolution-slider/css/navigation.css" rel="stylesheet" type="text/css" />
+        <link href="~/css/colors/theme-skin-yellow.css" rel="stylesheet" type="text/css">
+        <!-- CSS -->
+        <link href="~/css/site.css" rel="stylesheet" />
+        <!-- external javascripts -->
+        <script src="~/js/jquery-2.2.0.min.js"></script>
+        <script src="~/js/jquery-ui.min.js"></script>
+        <script src="~/js/bootstrap.min.js"></script>
+        <!-- JS | jquery plugin collection for this theme -->
+        <script src="~/js/jquery-plugin-collection.js"></script>
+        <!-- Revolution Slider 5.x SCRIPTS -->
+        <script src="~/js/revolution-slider/js/jquery.themepunch.tools.min.js"></script>
+        <script src="~/js/revolution-slider/js/jquery.themepunch.revolution.min.js"></script>
+    </environment>
+
+    <environment exclude="Development">
+        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+    </environment>
+
+</head>
+<body class="has-side-panel side-panel-right fullwidth-page side-push-panel">
+    <div class="body-overlay"></div>
+
+    <div id="side-panel" class="dark" data-bg-img="http://placehold.it/1920x1280">
+        <div class="side-panel-wrap">
+            <div id="side-panel-trigger-close" class="side-panel-trigger"><a href="#"><i class="icon_close font-30"></i></a></div>
+            <a href="javascript:void(0)"><img alt="logo" src="images/logo-wide.png"></a>
+            <div class="side-panel-nav mt-30">
+                <div class="widget no-border">
+                    <nav>
+                        <ul class="nav nav-list">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Services</a></li>
+                            <li>
+                                <a class="tree-toggler nav-header">Pages <i class="fa fa-angle-down"></i></a>
+                                <ul class="nav nav-list tree">
+                                    <li><a href="#">About</a></li>
+                                    <li><a href="#">Terms</a></li>
+                                    <li><a href="#">FAQ</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="side-panel-widget mt-30">
+                <div class="widget no-border">
+                    <ul>
+                        <li class="font-14 mb-5"> <i class="fa fa-phone text-theme-colored"></i> <a href="#" class="text-gray">123-456-789</a> </li>
+                        <li class="font-14 mb-5"> <i class="fa fa-clock-o text-theme-colored"></i> Mon-Fri 8:00 to 2:00 </li>
+                        <li class="font-14 mb-5"> <i class="fa fa-envelope-o text-theme-colored"></i> <a href="#" class="text-gray">contact@yourdomain.com</a> </li>
+                    </ul>
+                </div>
+                <div class="widget">
+                    <ul class="styled-icons icon-dark icon-theme-colored icon-sm">
+                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    </ul>
+                </div>
+                <p>Copyright &copy;2016 ThemeMascot</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="wrapper" class="clearfix" style="height:100vh">
+        <!-- preloader -->
+        <div id="preloader">
+            <div id="spinner">
+                <div class="preloader-dot-loading">
+                    <div class="cssload-loading"><i></i><i></i><i></i><i></i></div>
+                </div>
+            </div>
+            <div id="disable-preloader" class="btn btn-default btn-sm">Disable Preloader</div>
+        </div>
+
+        <!-- Header -->
+        <!-- Start main-content -->
+        <div class="main-content" style="height:100%;">
+
+            @RenderBody()
+
+        </div>
+        <!-- end main-content -->
+        <a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
+    </div>
+    <!-- end wrapper -->
+    <!-- Footer Scripts -->
+    <!-- JS | Custom script for all pages -->
+    <environment include="Development">
+        <script src="~/js/custom.js"></script>
+        <script type="text/javascript" src="~/js/revolution-slider/js/extensions/revolution.extension.actions.min.js"></script>
+        <script type="text/javascript" src="~/js/revolution-slider/js/extensions/revolution.extension.carousel.min.js"></script>
+        <script type="text/javascript" src="~/js/revolution-slider/js/extensions/revolution.extension.kenburn.min.js"></script>
+        <script type="text/javascript" src="~/js/revolution-slider/js/extensions/revolution.extension.layeranimation.min.js"></script>
+        <script type="text/javascript" src="~/js/revolution-slider/js/extensions/revolution.extension.migration.min.js"></script>
+        <script type="text/javascript" src="~/js/revolution-slider/js/extensions/revolution.extension.navigation.min.js"></script>
+        <script type="text/javascript" src="~/js/revolution-slider/js/extensions/revolution.extension.parallax.min.js"></script>
+        <script type="text/javascript" src="~/js/revolution-slider/js/extensions/revolution.extension.slideanims.min.js"></script>
+        <script type="text/javascript" src="~/js/revolution-slider/js/extensions/revolution.extension.video.min.js"></script>
+        <script type="text/javascript" src="~/js/moment.js"></script>
+        @RenderSection("Scripts", required: false)
+    </environment>
+</body>
+
+@*<a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">NourAnsar.Website</a>
+    <ul>
+        <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+        <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
+        <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+    </ul>
+    <partial name="_LoginPartial" />*@
+
+
+@*<partial name="_CookieConsentPartial" />*@
+
+
+
+
+@*<environment include="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery"
+                crossorigin="anonymous"
+                integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT">
+        </script>
+        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                crossorigin="anonymous"
+                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
+        </script>
+        <script src="~/js/site.min.js" asp-append-version="true"></script>
+    </environment>*@
+
+
+</html>

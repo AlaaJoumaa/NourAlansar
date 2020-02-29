@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "Projects";
+    Layout = "~/Views/Shared/_Dashboard.cshtml";
+}
+<div ng-controller="projectController">
+
+    <div class="loading-area" ng-show="contentProgress">
+        <div class="loading-bar">
+            <div class="progress-loading"></div>
+        </div>
+    </div>
+
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i>Projects</a></li>
+            <li class="active">Dashboard</li>
+        </ol>
+    </section>
+    <!-- Main content -->
+    <section class="content" style="overflow:auto;">
+
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+            <div class="col-md-12 col-xs-12 col-sm-12">
+                <div class="row"></div>
+                @await Html.PartialAsync("~/Views/Templates/_ProjectList.cshtml")
+            </div>
+        </div>
+
+    </section>
+    <!-- /.content -->
+
+</div>
+
+@section Scripts {
+
+    <script src="~/js/app/projects.js"></script>
+}
